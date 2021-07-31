@@ -12,22 +12,7 @@ class CollectionCell: UICollectionViewCell {
 
 	static let reuseIdentifier = String(describing: CollectionCell.self)
 
-	var collectionItem: CollectionItem? {
-		didSet {
-			if let collectionItem = collectionItem {
-				nameLabel.text = collectionItem.name
-			}
-		}
-	}
-	
-	private let nameLabel: UILabel = {
-		let label = UILabel()
-		label.font = UIFont.boldSystemFont(ofSize: 15)
-		label.numberOfLines = 0
-		label.sizeToFit()
-		label.lineBreakMode = .byWordWrapping
-		return label
-	}()
+	var tableView: UITableView? = TableViewController().view as? UITableView
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -39,11 +24,20 @@ class CollectionCell: UICollectionViewCell {
 		sharedInit()
 	}
 	
+	func setTableViewDelegate<D: UITableViewDataSource & UITableViewDelegate>(_ delegate: D,
+																			  forRow row: Int,
+																			  forItem item: Int) {
+		if let tableView = self.tableView {
+			tableView.delegate = delegate
+			tableView.dataSource = delegate
+			tableView.tag = row
+			tableView.reloadData()
+		}
+	}
+	
 	private func sharedInit() {
-		addSubview(nameLabel)
-		nameLabel.anchor(top: topAnchor,
-						 left: leftAnchor,
-						 right: rightAnchor,
-						 paddingTop: 10)
+		if let tableView = self.tableView {
+			addSubview(tableView)
+		}
 	}
 }

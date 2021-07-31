@@ -13,8 +13,9 @@
 		ACA6E3C126B535B400D69739 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACA6E3C026B535B400D69739 /* Assets.xcassets */; };
 		ACA6E3C426B535B400D69739 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACA6E3C226B535B400D69739 /* LaunchScreen.storyboard */; };
 		ACA6E3CC26B5361700D69739 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA6E3CB26B5361700D69739 /* Helpers.swift */; };
-		ACA6E3CE26B5373500D69739 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA6E3CD26B5373500D69739 /* Models.swift */; };
 		ACA6E3D026B538EE00D69739 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA6E3CF26B538EE00D69739 /* CollectionCell.swift */; };
+		ACA6E3D426B5459000D69739 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA6E3D326B5459000D69739 /* TableViewController.swift */; };
+		ACA6E3D626B5459D00D69739 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA6E3D526B5459D00D69739 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +27,10 @@
 		ACA6E3C326B535B400D69739 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACA6E3C526B535B400D69739 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACA6E3CB26B5361700D69739 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
-		ACA6E3CD26B5373500D69739 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		ACA6E3CF26B538EE00D69739 /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
+		ACA6E3D326B5459000D69739 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		ACA6E3D526B5459D00D69739 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		ACA6E3D726B5770200D69739 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +47,7 @@
 		ACA6E3AB26B535B200D69739 = {
 			isa = PBXGroup;
 			children = (
+				ACA6E3D726B5770200D69739 /* README.md */,
 				ACA6E3B626B535B200D69739 /* Table-View-in-a-Collection-View-Cell */,
 				ACA6E3B526B535B200D69739 /* Products */,
 			);
@@ -67,8 +71,9 @@
 				ACA6E3CB26B5361700D69739 /* Helpers.swift */,
 				ACA6E3C526B535B400D69739 /* Info.plist */,
 				ACA6E3C226B535B400D69739 /* LaunchScreen.storyboard */,
-				ACA6E3CD26B5373500D69739 /* Models.swift */,
 				ACA6E3B926B535B200D69739 /* SceneDelegate.swift */,
+				ACA6E3D526B5459D00D69739 /* TableViewCell.swift */,
+				ACA6E3D326B5459000D69739 /* TableViewController.swift */,
 			);
 			path = "Table-View-in-a-Collection-View-Cell";
 			sourceTree = "<group>";
@@ -144,10 +149,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACA6E3BC26B535B200D69739 /* CollectionViewController.swift in Sources */,
+				ACA6E3D626B5459D00D69739 /* TableViewCell.swift in Sources */,
+				ACA6E3D426B5459000D69739 /* TableViewController.swift in Sources */,
 				ACA6E3B826B535B200D69739 /* AppDelegate.swift in Sources */,
 				ACA6E3BA26B535B200D69739 /* SceneDelegate.swift in Sources */,
 				ACA6E3CC26B5361700D69739 /* Helpers.swift in Sources */,
-				ACA6E3CE26B5373500D69739 /* Models.swift in Sources */,
 				ACA6E3D026B538EE00D69739 /* CollectionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
