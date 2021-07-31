@@ -11,29 +11,21 @@ import UIKit
 class CollectionViewController: UICollectionViewController {
 	var collectitonItems = [CollectionItem]()
 	
+	//	Guard Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: 'UICollectionView must be initialized with a non-nil layout parameter'
 	init() {
 		super.init(collectionViewLayout: UICollectionViewFlowLayout())
-		sharedInit()
 	}
 
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
 
-	private func sharedInit() {
-		navigationItem.title = "TableView in a CollectionViewCell"
-		collectitonItems.append(CollectionItem.init(name: "test"))
-		self.collectionView!.register(CollectionCell.self,
-									  forCellWithReuseIdentifier: CollectionCell.reuseIdentifier)
-		self.collectionView?.reloadData()
-	}
-	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		navigationItem.title = "TableView in a CollectionViewCell"
-		collectitonItems.append(CollectionItem.init(name: "test"))
+		collectionView?.backgroundColor = UIColor.white
 		self.collectionView!.register(CollectionCell.self,
 									  forCellWithReuseIdentifier: CollectionCell.reuseIdentifier)
+		collectitonItems.append(CollectionItem.init(name: "test"))
 		self.collectionView?.reloadData()
 	}
 
@@ -53,14 +45,3 @@ class CollectionViewController: UICollectionViewController {
 		return cell
 	}
 }
-
-extension CollectionViewController: UICollectionViewDelegateFlowLayout {
-	func collectionView(_ collectionView: UICollectionView,
-						layout collectionViewLayout: UICollectionViewLayout,
-						sizeForItemAt indexPath: IndexPath) -> CGSize {
-		return CGSize.init(width: view.frame.width, height: 250)
-	}
-}
-
-
-
