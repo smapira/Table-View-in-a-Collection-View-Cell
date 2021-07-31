@@ -11,12 +11,21 @@ import UIKit
 class CollectionViewController: UICollectionViewController {
 	var collectitonItems = [CollectionItem]()
 	
-	// initialized with a non-nil layout parameter
 	init() {
 		super.init(collectionViewLayout: UICollectionViewFlowLayout())
+		sharedInit()
 	}
+
 	required init?(coder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
+	}
+
+	private func sharedInit() {
+		navigationItem.title = "TableView in a CollectionViewCell"
+		collectitonItems.append(CollectionItem.init(name: "test"))
+		self.collectionView!.register(CollectionCell.self,
+									  forCellWithReuseIdentifier: CollectionCell.reuseIdentifier)
+		self.collectionView?.reloadData()
 	}
 	
 	override func viewDidLoad() {
@@ -52,4 +61,6 @@ extension CollectionViewController: UICollectionViewDelegateFlowLayout {
 		return CGSize.init(width: view.frame.width, height: 250)
 	}
 }
+
+
 
