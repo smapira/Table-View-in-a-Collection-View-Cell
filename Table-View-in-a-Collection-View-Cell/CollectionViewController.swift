@@ -76,6 +76,7 @@ class CollectionViewController: UICollectionViewController {
 	}
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
 extension CollectionViewController: UICollectionViewDelegateFlowLayout {
 	func collectionView(_ collectionView: UICollectionView,
 						layout collectionViewLayout: UICollectionViewLayout,
